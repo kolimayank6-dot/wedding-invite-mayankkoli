@@ -10,12 +10,11 @@
 <meta property="og:title" content="Mayank &amp; Jigyasa · Wedding Invitation">
 <meta property="og:description" content="You are warmly invited · 20 November 2026">
 <meta property="og:url" content="https://kolimayank6-dot.github.io/wedding-invite-mayankkoli/">
-<meta property="og:image" content="https://kolimayank6-dot.github.io/wedding-invite-mayankkoli/images/cover.jpg">
+<meta property="og:image" content="images/cover.jpg">
 <meta name="twitter:card" content="summary_large_image">
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Ccircle cx='32' cy='32' r='30' fill='%233B0D18' stroke='%23D4AF6A' stroke-width='2'/%3E%3Ctext x='32' y='41' font-family='Georgia,serif' font-size='24' font-style='italic' fill='%23E8D3A5' text-anchor='middle'%3EM%26amp;J%3C/text%3E%3C/svg%3E">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="preconnect" href="https://lh3.googleusercontent.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600&family=Jost:wght@300;400;500&family=Pinyon+Script&family=Tiro+Devanagari+Hindi&display=swap" rel="stylesheet">
 <style>
 :root{
@@ -38,9 +37,8 @@ button{font:inherit;color:inherit;background:none;border:0;cursor:pointer}
 a{color:inherit}
 img{display:block;max-width:100%}
 :focus-visible{outline:2px solid var(--champagne);outline-offset:3px}
-.app{position:relative;max-width:520px;margin:0 auto;overflow:hidden;background:var(--burgundy)}
 
-/* Immediately render content under #intro */
+.app{position:relative;max-width:520px;margin:0 auto;overflow:hidden;background:var(--ivory)}
 .js body:not(.ready) .app{opacity:1;pointer-events:none}
 .js body.ready .app{opacity:1;pointer-events:auto}
 
@@ -88,20 +86,19 @@ section:first-child{border-top:0}
 .names{font-family:var(--serif);font-weight:500;line-height:.98}
 .names span{display:block}
 .names i{display:block;font-family:var(--script);font-style:normal;font-weight:400;color:var(--champagne);font-size:.46em;line-height:1.15}
-
-/* Ensure the photo is immediately visible when loaded without keeping the screen blank */
 .photo{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:1}
 .photo.bad{display:none}
 .crn{position:absolute;width:42px;height:42px;color:var(--champagne);pointer-events:none;opacity:.9}
 .crn.tl{top:20px;left:20px}.crn.tr{top:20px;right:20px;transform:scaleX(-1)}.crn.bl{bottom:20px;left:20px;transform:scaleY(-1)}.crn.br{bottom:20px;right:20px;transform:scale(-1)}
 
-#intro{position:fixed;left:0;top:0;width:100%;height:100vh;height:100dvh;z-index:200;background:radial-gradient(ellipse at 50% 38%,var(--burgundy-2),var(--burgundy) 60%,var(--burgundy-deep) 130%),var(--grain),var(--burgundy);color:var(--ivory);overflow:hidden;display:flex;align-items:center;justify-content:center;text-align:center;transition:opacity 0.6s var(--ease),visibility 0.6s}
-#intro.opening{opacity:0}
+#intro{position:fixed;left:0;top:0;width:100%;height:100vh;height:100dvh;z-index:200;background:radial-gradient(ellipse at 50% 38%,var(--burgundy-2),var(--burgundy) 60%,var(--burgundy-deep) 130%),var(--grain),var(--burgundy);color:var(--ivory);overflow:hidden;display:flex;align-items:center;justify-content:center;text-align:center;transition:opacity .6s var(--ease),visibility .6s}
+#intro.opening{opacity:0;pointer-events:none}
 #intro.gone{display:none}
 .frame{position:absolute;inset:14px;border:1px solid var(--line);pointer-events:none;transition:opacity .5s}
 .frame::after{content:"";position:absolute;inset:6px;border:1px solid var(--line-soft)}
-.ibox{position:relative;z-index:2;padding:calc(30px + var(--st)) 28px calc(30px + var(--sb));display:flex;flex-direction:column;align-items:center;transition:opacity .5s var(--ease),transform .5s var(--ease)}
-#intro.opening .ibox{opacity:0;transform:scale(1.04)}
+#intro.opening .frame,#intro.opening .crn{opacity:0;transition:opacity .5s}
+.ibox{position:relative;z-index:2;padding:calc(30px + var(--st)) 28px calc(30px + var(--sb));display:flex;flex-direction:column;align-items:center;transition:opacity .5s var(--ease),transform .6s var(--ease)}
+#intro.opening .ibox{opacity:0;transform:scale(1.05)}
 .ibox .gn{font-size:18px;color:var(--champagne-light)}
 .ibox .ey{color:var(--champagne);margin-top:14px;font-size:11.5px}
 .mono{width:74px;height:74px;border:1px solid var(--champagne);border-radius:50%;display:grid;place-items:center;margin:16px 0 12px;font:italic 500 28px/1 var(--serif);color:var(--champagne-light);position:relative}
@@ -134,8 +131,10 @@ section:first-child{border-top:0}
 #menu .m{font:italic 500 28px/1 var(--serif);color:var(--champagne);margin-bottom:10px}
 
 /* ---- Hero ---- */
-#home{min-height:100vh;min-height:100dvh;display:flex;flex-direction:column;overflow:hidden;background:var(--burgundy);color:var(--ivory);text-align:center;padding:0}
+#home{min-height:100vh;min-height:100svh;display:flex;flex-direction:column;overflow:hidden;background:var(--burgundy);color:var(--ivory);text-align:center;padding:0}
 .hpic{position:relative;flex:1 1 auto;min-height:56vh;min-height:56svh;overflow:hidden;background:radial-gradient(ellipse at 50% 40%,var(--burgundy-3),var(--burgundy-2) 55%,var(--burgundy-deep) 130%)}
+.hpic .photo{animation:kbh 26s ease-in-out infinite alternate}
+@keyframes kbh{from{transform:scale(1)}to{transform:scale(1.06)}}
 .hpic::before{content:"";position:absolute;left:0;right:0;top:0;height:24%;background:linear-gradient(180deg,rgba(36,7,15,.5),rgba(36,7,15,0));z-index:1;pointer-events:none}
 .hpic::after{content:"";position:absolute;left:0;right:0;bottom:0;height:38%;background:linear-gradient(180deg,rgba(59,13,24,0),var(--burgundy));z-index:1;pointer-events:none}
 #home::after{content:"";position:absolute;inset:0;background:var(--grain);opacity:.35;pointer-events:none;z-index:2}
@@ -166,11 +165,8 @@ section:first-child{border-top:0}
 .scratch-u .d2{font:600 clamp(26px,7.6vw,34px)/1.15 var(--serif);letter-spacing:.08em;text-transform:var(--tt);color:var(--champagne-light);margin:6px 0}
 .scratch-u .d3{font:italic 500 clamp(20px,5.8vw,25px)/1.25 var(--serif);color:var(--ivory)}
 .scratch-u .d4{font:400 12px/1.4 var(--sans);letter-spacing:.14em;text-transform:var(--tt);color:var(--champagne-soft);opacity:.85;margin-top:8px}
-#sc{position:absolute;inset:0;width:100%;height:100%;touch-action:none;cursor:crosshair;transition:opacity 1.2s var(--ease),transform 1.2s var(--ease)}
-#sc.cleared{opacity:0;transform:scale(1.03);pointer-events:none}
-.revealed .scratch-u>*{animation:pop 1.2s var(--ease) both}
-.revealed .scratch-u>*:nth-child(2){animation-delay:.12s}.revealed .scratch-u>*:nth-child(3){animation-delay:.26s}.revealed .scratch-u>*:nth-child(4){animation-delay:.4s}
-@keyframes pop{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:none}}
+#sc{position:absolute;inset:0;width:100%;height:100%;touch-action:none;cursor:crosshair;transition:opacity .6s var(--ease);z-index:5}
+#sc.cleared{opacity:0;pointer-events:none}
 .s-hint{margin-top:16px;font-style:italic;font-size:17px;color:var(--champagne-soft);opacity:.9}
 .s-hint button{text-decoration:underline;text-underline-offset:3px;color:var(--champagne);font-style:italic}
 
@@ -202,6 +198,7 @@ section:first-child{border-top:0}
 @media (hover:hover){.g:hover .fr{transform:translateY(-3px)}}
 .cap{display:block;margin-top:8px;font:400 10.5px/1.4 var(--sans);letter-spacing:.16em;text-transform:var(--tt);color:var(--burgundy)}
 .gp{position:absolute;inset:0;display:grid;place-items:center;background:var(--cream);color:var(--champagne-deep);font:italic 500 30px/1 var(--serif)}
+
 #lb{position:fixed;inset:0;z-index:210;background:rgba(36,7,15,.97);display:flex;align-items:center;justify-content:center;opacity:0;visibility:hidden;transition:opacity .5s,visibility .5s;touch-action:none;overflow:hidden}
 #lb.open{opacity:1;visibility:visible}
 .lb-m{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;padding:60px 12px 76px;touch-action:none}
@@ -262,9 +259,6 @@ section:first-child{border-top:0}
 .venue{background:var(--ivory);border:1px solid var(--champagne);border-radius:4px;margin-bottom:16px;overflow:hidden;color:var(--espresso)}
 .mapbox{position:relative;height:200px;background:var(--cream);overflow:hidden;border-bottom:1px solid var(--champagne)}
 .mapbox iframe{position:absolute;inset:0;width:100%;height:100%;border:0;z-index:3;background:var(--cream)}
-.mlabel{position:absolute;left:10px;top:10px;z-index:4;background:var(--ivory);border:1px solid var(--line);border-radius:3px;padding:5px 10px 5px 8px;font:500 12px/1.2 var(--sans);letter-spacing:.06em;color:var(--burgundy);display:flex;align-items:center;gap:7px}
-.mlabel i{width:7px;height:7px;background:var(--champagne);transform:rotate(45deg);flex:none}
-.live{position:absolute;right:10px;bottom:10px;z-index:4;background:var(--burgundy);color:var(--champagne-soft);border:1px solid var(--champagne);border-radius:4px;padding:9px 14px;font:500 11.5px/1 var(--sans);letter-spacing:.14em;text-transform:var(--tt);min-height:36px}
 .vb{padding:18px 16px 18px;text-align:center}
 .vb .ey{font-size:11px}
 .vb h3{font:600 clamp(24px,7vw,29px)/1.15 var(--serif);color:var(--burgundy);margin-top:6px}
@@ -281,8 +275,7 @@ section:first-child{border-top:0}
 .days button[aria-pressed=true] .hrt{color:var(--champagne)}
 .ag-h{text-align:center;font:400 12px/1.4 var(--sans);letter-spacing:.2em;text-transform:var(--tt);color:var(--burgundy);margin-bottom:12px}
 .ag-h b{font-weight:500;color:var(--champagne-deep)}
-.ag{display:grid;grid-template-columns:96px 1fr;background:var(--ivory);border:1px solid var(--champagne);border-radius:4px;overflow:hidden;margin-bottom:10px;opacity:0;transform:translateY(12px);animation:agin .7s var(--ease) forwards;animation-delay:calc(var(--i)*.12s)}
-@keyframes agin{to{opacity:1;transform:none}}
+.ag{display:grid;grid-template-columns:96px 1fr;background:var(--ivory);border:1px solid var(--champagne);border-radius:4px;overflow:hidden;margin-bottom:10px}
 .ag-t{position:relative;background:var(--burgundy);color:var(--champagne-light);text-align:center;display:flex;flex-direction:column;justify-content:center;padding:14px 6px}
 .ag-t b{font:500 26px/1 var(--serif);font-variant-numeric:lining-nums}
 .ag-t small{font:400 11px/1.3 var(--sans);letter-spacing:.2em;margin-top:4px}
@@ -297,7 +290,6 @@ section:first-child{border-top:0}
 .dress .top{display:flex;align-items:center;justify-content:space-between;gap:12px}
 .dress h3{font:600 23px/1.15 var(--serif);color:var(--ivory)}
 .dress p{color:var(--champagne-soft);opacity:.88;font-style:italic;font-size:17px;line-height:1.3}
-.dress .tap{font:400 11px/1.4 var(--sans);letter-spacing:.2em;text-transform:var(--tt);color:var(--champagne);margin-top:4px;font-style:normal;opacity:1}
 .sw{display:flex;gap:5px}
 .sw i{display:block;width:16px;height:30px;border-radius:2px;border:1px solid rgba(255,248,234,.35)}
 .dress .top .sw{flex:none}
@@ -336,10 +328,8 @@ section:first-child{border-top:0}
 .thanks{display:none;text-align:center;padding:18px 0 0}
 .thanks.show{display:block}
 .thanks svg{width:54px;height:54px;display:block;margin:0 auto 4px}
-.thanks path{stroke-dasharray:260;stroke-dashoffset:260;animation:draw 2.4s var(--ease) forwards}
-@keyframes draw{to{stroke-dashoffset:0}}
-.thanks h3{font:400 46px/1.2 var(--script);color:var(--burgundy);animation:pop 1.2s var(--ease) .3s both}
-.thanks p{color:var(--muted);font-style:italic;animation:pop 1.2s var(--ease) .6s both}
+.thanks h3{font:400 46px/1.2 var(--script);color:var(--burgundy)}
+.thanks p{color:var(--muted);font-style:italic}
 
 #closing{min-height:100vh;min-height:100svh;display:flex;flex-direction:column;justify-content:center;align-items:center;text-align:center;padding:70px 22px 120px;overflow:hidden;background:var(--burgundy-deep);color:var(--ivory)}
 #closing .photo{opacity:.4}
@@ -354,19 +344,18 @@ section:first-child{border-top:0}
 #closing .wl{font-style:italic;font-size:22px;color:var(--champagne-soft);margin:18px 0 22px;line-height:1.35}
 .foot{position:absolute;left:0;right:0;bottom:calc(76px + var(--sb));z-index:3;font:400 12px/1 var(--sans);letter-spacing:.18em;color:var(--champagne);opacity:.8;text-align:center}
 
+/* ---- Section Backgrounds ---- */
 #wedding,#functions{overflow:hidden}
 .bgs{position:absolute;inset:0;z-index:0;overflow:hidden;pointer-events:none}
-.bgs img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:0;transform:scale(1.06);transition:opacity 2.6s ease,transform 10s linear}
-.bgs img.on{opacity:var(--bgop,.3);transform:scale(1.15)}
+.bgs img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:0;transform:scale(1.06);transition:opacity 2s ease,transform 8s linear}
+.bgs img.on{opacity:var(--bgop,.32);transform:scale(1.12)}
 .bgs::after{content:"";position:absolute;inset:0;background:var(--bgo)}
 .bgs~*{position:relative;z-index:1}
 #wedding .bgs{--bgop:.32;--bgo:linear-gradient(180deg,rgba(59,13,24,.6),rgba(59,13,24,.2) 45%,rgba(59,13,24,.65))}
 #functions .bgs{--bgop:.4;--bgo:linear-gradient(180deg,rgba(255,248,234,.72),rgba(255,248,234,.3) 45%,rgba(255,248,234,.78))}
 
 #ytHost{position:fixed;left:0;bottom:0;width:200px;height:200px;opacity:0;pointer-events:none;z-index:-1;overflow:hidden}
-
 @media (min-width:760px){.app{max-width:600px;box-shadow:0 0 0 1px var(--line),0 0 90px rgba(0,0,0,.5)}body{font-size:19px}section{padding:72px 28px 76px}.rail{padding-left:12%;padding-right:12%;margin:0 -28px}}
-@media (max-width:359px){.days b{font-size:22px}.ag{grid-template-columns:84px 1fr}.sw i{width:13px}}
 </style>
 </head>
 <body class="locked">
@@ -480,7 +469,7 @@ section:first-child{border-top:0}
   <section id="moments" class="cream">
     <header class="hd" data-reveal><p class="ey">A glimpse of us</p><h2 class="wipe">Our moments</h2><p class="sub">Tap any photo to view it full screen</p><svg class="rule" aria-hidden="true"><use href="#rule"/></svg></header>
     <div class="show-bar" data-reveal><button class="btn pri" id="playShow">Play showcase</button></div>
-    <div id="gallery"><p class="gal-load">Loading our moments…</p></div>
+    <div id="gallery"></div>
   </section>
 
   <section id="films" class="dark">
@@ -556,10 +545,11 @@ section:first-child{border-top:0}
   <button class="lb-b lb-x" id="lbX" aria-label="Close">×</button>
   <button class="lb-b lb-p" id="lbP" aria-label="Previous photo">‹</button>
   <button class="lb-b lb-n" id="lbN" aria-label="Next photo">›</button>
-  <div class="lb-bar"><button class="lb-b" id="lbO" aria-label="Zoom out">−</button><button class="lb-b" id="lbS" aria-label="Play or pause showcase">▶</button><button class="lb-b" id="lbI" aria-label="Zoom in">+</button></div>
+  <div class="lb-bar"><button class="lb-b" id="lbO" aria-label="Zoom out">−</button><button class="lb-b" id="lbI" aria-label="Zoom in">+</button></div>
 </div>
 
 <script>
+/* ---------- Design tokens ---------- */
 const BURGUNDY = "#3B0D18", BURGUNDY_2 = "#521322", BURGUNDY_3 = "#6B1D30", WINE = "#641B2A", BURGUNDY_DEEP = "#24070F";
 const CHAMPAGNE = "#D4AF6A", CHAMPAGNE_LIGHT = "#E8D3A5", CHAMPAGNE_SOFT = "#F1E3C2", CHAMPAGNE_DEEP = "#97712C";
 const IVORY = "#FFF8EA", CREAM = "#F8F0DF", ESPRESSO = "#241417";
@@ -569,31 +559,32 @@ const WEDDING_VENUE = { venue: "Fillow Casa", address: "J-7 Badshahpur, Sohna Ro
 const RECEPTION_VENUE = { venue: "Sadiq Nagar Community Center Barat Ghar", address: "Sector 3, Ayurvigyan Nagar, New Delhi, Delhi 110049", mapUrl: "https://share.google/NZqBWcqgS7zBtFz1C", mapQuery: "Sadiq Nagar Community Center Barat Ghar Sector 3 Ayurvigyan Nagar New Delhi 110049" };
 const RECEPTION_TIME = "7:00 PM onwards";
 
+/* Embedded local file names with automatic Google Drive fallback */
 const CONFIG = {
   groom: "Mayank", bride: "Jigyasa", hashtag: "#MayankWedsJigyasa",
   countdownTarget: "2026-11-20T20:00:00+05:30",
   calendar: { title: "Mayank & Jigyasa's Wedding", start: "20261120T143000Z", end: "20261120T183000Z" },
   music: { youtube: "iTxW3NNHuyw", src: "music/wedding.mp3", autoStartOnOpen: true },
-  cover: { drive: "1RiMOSTV2KcN0VUtZectjcU9QkGQKZIjU", pos: "50% 28%" },
-  closing: { drive: "1RiMOSTV2KcN0VUtZectjcU9QkGQKZIjU", pos: "50% 30%" },
+  cover: { src: "images/cover.jpg", drive: "1RiMOSTV2KcN0VUtZectjcU9QkGQKZIjU", pos: "50% 28%" },
+  closing: { src: "images/closing.jpg", drive: "1RiMOSTV2KcN0VUtZectjcU9QkGQKZIjU", pos: "50% 30%" },
   photos: [
-    { drive: "1JcbIE-v0QFs6DfwTEAMFW15ZS3y9J6k-", ratio: "3/4", frame: 1 },
-    { drive: "1aaNyn-cdsdpDb_PAsG2gMjtiIXBHLJRW", ratio: "1/1", frame: 2, caption: "Together" },
-    { drive: "1VvMiwkaXE9WAm9ZatgBixNsrJd-wuQ6i", ratio: "4/5", frame: 3 },
-    { drive: "1dSM__bf7XC8iRk3eS-bWV-jtI_u5wQp9", ratio: "2/3", frame: 2, caption: "Forever" },
-    { drive: "1OBhzQa5fzkRYzl7UkhfeUZLYP0JyBwLF", ratio: "4/3", frame: 1 },
-    { drive: "1m_urRiGcLc4RjuHJCLjbbL7Wmh19_RKT", ratio: "3/4", frame: 3 },
-    { drive: "1weg6-xyu70aK9e6aznEmAOetb6RusA4Z", ratio: "1/1", frame: 2, caption: "Always" },
-    { drive: "1IxteYq2Ck-OHSxL2MGhADTVbSRFYIsai", ratio: "4/5", frame: 1 },
-    { drive: "1qxnvAUJSM7w40-NPUwwH93yp85mQ5bTM", ratio: "3/4", frame: 3 },
-    { drive: "17hBlkdXlZ4rCFaM3nFsAbjjmhSCcIN2r", ratio: "1/1", frame: 2, caption: "Together" },
-    { drive: "1PgxmNvrRSxQW9pMfe0K6vsiIgK6dXYFO", ratio: "4/3", frame: 1 },
-    { drive: "1imm6VhYa8_PeN7LLwiqd0mR44LVSyL_0", ratio: "2/3", frame: 3 },
-    { drive: "1XYWnZTvSNX0cXgu1V_uepsLMKlMuB218", ratio: "4/5", frame: 2, caption: "Forever" },
-    { drive: "1WrCuPerUcdGZDypPCjaVnp_23hEw5S72", ratio: "3/4", frame: 1 },
-    { drive: "1dqJK2n6_rw4uiIirnv6eoLBF1e66KjLr", ratio: "1/1", frame: 3 },
-    { drive: "1c9BmawNK5G47ju71nlOWXpdw6kAVwZ3o", ratio: "3/4", frame: 2, caption: "Always" },
-    { drive: "1CsG6uZsqa6Xnao1gwo3ltkvWV6UNAa__", ratio: "4/3", frame: 1 }
+    { src: "images/photo-01.jpg", drive: "1JcbIE-v0QFs6DfwTEAMFW15ZS3y9J6k-", ratio: "3/4", frame: 1 },
+    { src: "images/photo-02.jpg", drive: "1aaNyn-cdsdpDb_PAsG2gMjtiIXBHLJRW", ratio: "1/1", frame: 2, caption: "Together" },
+    { src: "images/photo-03.jpg", drive: "1VvMiwkaXE9WAm9ZatgBixNsrJd-wuQ6i", ratio: "4/5", frame: 3 },
+    { src: "images/photo-04.jpg", drive: "1dSM__bf7XC8iRk3eS-bWV-jtI_u5wQp9", ratio: "2/3", frame: 2, caption: "Forever" },
+    { src: "images/photo-05.jpg", drive: "1OBhzQa5fzkRYzl7UkhfeUZLYP0JyBwLF", ratio: "4/3", frame: 1 },
+    { src: "images/photo-06.jpg", drive: "1m_urRiGcLc4RjuHJCLjbbL7Wmh19_RKT", ratio: "3/4", frame: 3 },
+    { src: "images/photo-07.jpg", drive: "1weg6-xyu70aK9e6aznEmAOetb6RusA4Z", ratio: "1/1", frame: 2, caption: "Always" },
+    { src: "images/photo-08.jpg", drive: "1IxteYq2Ck-OHSxL2MGhADTVbSRFYIsai", ratio: "4/5", frame: 1 },
+    { src: "images/photo-09.jpg", drive: "1qxnvAUJSM7w40-NPUwwH93yp85mQ5bTM", ratio: "3/4", frame: 3 },
+    { src: "images/photo-10.jpg", drive: "17hBlkdXlZ4rCFaM3nFsAbjjmhSCcIN2r", ratio: "1/1", frame: 2, caption: "Together" },
+    { src: "images/photo-11.jpg", drive: "1PgxmNvrRSxQW9pMfe0K6vsiIgK6dXYFO", ratio: "4/3", frame: 1 },
+    { src: "images/photo-12.jpg", drive: "1imm6VhYa8_PeN7LLwiqd0mR44LVSyL_0", ratio: "2/3", frame: 3 },
+    { src: "images/photo-13.jpg", drive: "1XYWnZTvSNX0cXgu1V_uepsLMKlMuB218", ratio: "4/5", frame: 2, caption: "Forever" },
+    { src: "images/photo-14.jpg", drive: "1WrCuPerUcdGZDypPCjaVnp_23hEw5S72", ratio: "3/4", frame: 1 },
+    { src: "images/photo-15.jpg", drive: "1dqJK2n6_rw4uiIirnv6eoLBF1e66KjLr", ratio: "1/1", frame: 3 },
+    { src: "images/photo-16.jpg", drive: "1c9BmawNK5G47ju71nlOWXpdw6kAVwZ3o", ratio: "3/4", frame: 2, caption: "Always" },
+    { src: "images/photo-17.jpg", drive: "1CsG6uZsqa6Xnao1gwo3ltkvWV6UNAa__", ratio: "4/3", frame: 1 }
   ],
   videos: [
     { id: "Dc-iFIgrb1c", title: "Ring ceremony · Highlights", note: "The moments from our special day" },
@@ -644,7 +635,6 @@ const CONFIG = {
 (() => {
 const $ = (s, c = document) => c.querySelector(s);
 const $$ = (s, c = document) => [...c.querySelectorAll(s)];
-const reduced = matchMedia("(prefers-reduced-motion: reduce)").matches;
 const buzz = p => { try { navigator.vibrate && navigator.vibrate(p); } catch (_) {} };
 document.documentElement.classList.add("js");
 
@@ -652,15 +642,13 @@ try { history.scrollRestoration = "manual"; } catch (_) {}
 function resetScroll() {
   const el = document.documentElement;
   el.style.scrollBehavior = "auto";
-  window.scrollTo(0, 0);
-  el.scrollTop = 0;
-  document.body.scrollTop = 0;
+  window.scrollTo(0, 0); el.scrollTop = 0; document.body.scrollTop = 0;
 }
 resetScroll();
 
 const mapsUrl = e => e.mapUrl || "https://www.google.com/maps/search/?api=1&query=" + encodeURIComponent(e.mapQuery || `${e.venue} ${e.address}`);
 const dId = o => { const v = o.drive || "", m = v.match(/\/d\/([\w-]+)/) || v.match(/[?&]id=([\w-]+)/); return m ? m[1] : v.trim(); };
-const srcs = (o, w) => o.drive ? [`https://lh3.googleusercontent.com/d/${dId(o)}=w${w}`, `https://drive.google.com/thumbnail?id=${dId(o)}&sz=w${w}`] : [o.src || "", ""];
+const getImg = o => o.src || (o.drive ? `https://lh3.googleusercontent.com/d/${dId(o)}=w1400` : "");
 const spl = (s, d0) => `<span style="--d0:${d0}s">${[...s].map((c, i) => c === " " ? " " : `<b style="--i:${i}">${c}</b>`).join("")}</span>`;
 const amp = "<i>&amp;</i>";
 const FULL = { Mon: "Monday", Tue: "Tuesday", Wed: "Wednesday", Thu: "Thursday", Fri: "Friday", Sat: "Saturday", Sun: "Sunday" };
@@ -672,15 +660,13 @@ $$("[data-names-inline]").forEach(el => el.innerHTML = `<span class="l">${spl(CO
 $$("[data-l]").forEach(el => el.innerHTML = spl(el.dataset.l, .3));
 $("#hashtag").textContent = CONFIG.hashtag; requestAnimationFrame(() => $$("#intro .l").forEach(e => e.classList.add("go")));
 
-function setPhoto(el, o, w) {
-  const [a, b] = srcs(o, w || 1400); 
-  if (!a) { el.classList.add("bad"); return; }
+function setPhoto(el, o) {
   el.style.objectPosition = o.pos || "50% 35%";
-  el.addEventListener("error", () => { if (b && !el.dataset.t) { el.dataset.t = 1; el.src = b; } else el.classList.add("bad"); });
-  el.src = a;
+  el.src = getImg(o);
+  el.onerror = () => { if (o.drive && el.src !== getImg({ drive: o.drive })) el.src = `https://lh3.googleusercontent.com/d/${dId(o)}=w1400`; };
 }
-$$("[data-cover]").forEach(el => setPhoto(el, CONFIG.cover, 1000)); $$
-("[data-closing]").forEach(el => setPhoto(el, CONFIG.closing, 1000));
+$$("[data-cover]").forEach(el => setPhoto(el, CONFIG.cover)); $$
+("[data-closing]").forEach(el => setPhoto(el, CONFIG.closing));
 
 const F = CONFIG.family;
 $("#gp").textContent = F.grandparents; $("#gParents").textContent = F.groomParents; $("#bParents").textContent = F.brideParents;
@@ -689,46 +675,39 @@ $("#gp").textContent = F.grandparents; $("#gParents").textContent = F.groomParen
 const ph = '<div class="gp">M &amp; J</div>';
 const LB = (() => {
   const lb = $("#lb"), m = $("#lbM"), N = CONFIG.photos.length;
-  let idx = 0, s = 1, x = 0, y = 0, play = false, timer = null, img = null; const ptr = new Map();
-  const apply = () => { if (img) img.style.transform = `translate(${x}px,${y}px) scale(${s})`; };
-  const reset = () => { s = 1; x = 0; y = 0; apply(); };
+  let idx = 0, s = 1, img = null;
+  const apply = () => { if (img) img.style.transform = `scale(${s})`; };
   function render() {
-    const p = CONFIG.photos[idx], [a, b] = srcs(p, 1600);
-    m.innerHTML = a ? `<div class="kb"><img src="${a}" alt="Photo ${idx + 1}" draggable="false"></div>` : `<div class="kb">${ph}</div>`;
+    const p = CONFIG.photos[idx], src = getImg(p);
+    m.innerHTML = src ? `<div class="kb"><img src="${src}" alt="Photo ${idx + 1}" draggable="false"></div>` : `<div class="kb">${ph}</div>`;
     img = m.querySelector("img");
-    if (img) img.addEventListener("error", () => { if (b && !img.dataset.t) { img.dataset.t = 1; img.src = b; } else { m.innerHTML = `<div class="kb">${ph}</div>`; img = null; } });
-    reset(); $("#lbC").textContent = `${idx + 1} / ${N}`;
+    s = 1; apply(); $("#lbC").textContent = `${idx + 1} / ${N}`;
   }
   const step = d => { idx = (idx + d + N) % N; render(); };
   function open(i) { idx = i; lb.classList.add("open"); document.body.classList.add("lb-open"); render(); }
   function close() { lb.classList.remove("open"); document.body.classList.remove("lb-open"); }
-  const zoom = f => { s = Math.min(4, Math.max(1, s * f)); if (s === 1) { x = 0; y = 0; } apply(); };
   $("#lbX").onclick = close; $("#lbP").onclick = () => step(-1); $("#lbN").onclick = () => step(1);
-  $("#lbI").onclick = () => zoom(1.5); $("#lbO").onclick = () => zoom(1 / 1.5);
+  $("#lbI").onclick = () => { s = Math.min(3, s * 1.5); apply(); };
+  $("#lbO").onclick = () => { s = Math.max(1, s / 1.5); apply(); };
   return { open };
 })();
 $("#playShow").addEventListener("click", () => LB.open(0));
 
 /* ---------- Gallery ---------- */
-let galBuilt = false;
 const galEl = $("#gallery");
 function buildGallery() {
-  const card = (p, i) => {
-    const [a, b] = srcs(p, 600);
-    return `<button class="g" data-i="${i}" data-reveal="zoom" aria-label="Open photo ${i + 1}"><div class="fr f${(i % 3) + 1}"><div class="in" style="aspect-ratio:3/4">${a ? `<img src="${a}" data-fb="${b}" alt="Mayank and Jigyasa" loading="lazy" decoding="async">` : ph}</div></div><span class="cap">${p.caption || "Together"} — M &amp; J · 2026</span></button>`;
-  };
+  const card = (p, i) => `<button class="g" data-i="${i}" data-reveal="zoom" aria-label="Open photo ${i + 1}"><div class="fr f${(i % 3) + 1}"><div class="in" style="aspect-ratio:3/4"><img src="${getImg(p)}" alt="Mayank and Jigyasa" loading="lazy" decoding="async"></div></div><span class="cap">${p.caption || "Together"} — M &amp; J · 2026</span></button>`;
   galEl.innerHTML = `<div class="mas"><div class="mc">${CONFIG.photos.slice(0, 9).map((p, i) => card(p, i)).join("")}</div><div class="mc">${CONFIG.photos.slice(9).map((p, i) => card(p, i + 9)).join("")}</div></div>`;
   $$("[data-reveal]", galEl).forEach(el => io.observe(el)); $$
 (".g", galEl).forEach(b => b.addEventListener("click", () => LB.open(+b.dataset.i)));
 }
-new IntersectionObserver((es, o) => es.forEach(e => {
-  if (e.isIntersecting && !galBuilt) { galBuilt = true; o.disconnect(); buildGallery(); }
-}), { rootMargin: "400px 0px" }).observe($("#moments"));
+buildGallery();
 
 /* ---------- Videos ---------- */
 $("#videos").innerHTML = CONFIG.videos.map(v => `<article class="vid" data-reveal="zoom"><div class="vf"><div class="vbox"><button class="vthumb" data-id="${v.id}" aria-label="Play ${v.title}"><img src="https://i.ytimg.com/vi/${v.id}/hqdefault.jpg" alt="" loading="lazy" decoding="async"><span class="play"></span></button></div></div><div class="vcap"><h3>${v.title}</h3><p>${v.note}</p></div></article>`).join("");
 $$(".vthumb").forEach(b => b.addEventListener("click", () => {
-  b.parentElement.innerHTML = `<iframe src="https://www.youtube-nocookie.com/embed/${b.dataset.id}?autoplay=1&rel=0&playsinline=1" title="Ring ceremony video" allow="autoplay; encrypted-media; picture-in-picture; fullscreen" allowfullscreen></iframe>`;
+  try { Music.pause(); } catch(_) {}
+  b.parentElement.innerHTML = `<iframe src="https://www.youtube-nocookie.com/embed/${b.dataset.id}?autoplay=1&rel=0&playsinline=1" title="Video" allow="autoplay; encrypted-media; picture-in-picture; fullscreen" allowfullscreen></iframe>`;
 }));
 
 /* ---------- Events Rail ---------- */
@@ -756,12 +735,11 @@ $("#rail").innerHTML = CONFIG.events.map(e => {
 /* ---------- Venues ---------- */
 $("#venues").innerHTML = CONFIG.venues.map(v => `
   <article class="venue" data-reveal="zoom">
-    <div class="mapbox" data-q="${(v.mapQuery || v.venue + " " + v.address).replace(/"/g, "")}"><iframe loading="lazy" title="Live Google map" src="https://www.google.com/maps?q=${encodeURIComponent(v.mapQuery || v.venue + " " + v.address)}&z=15&output=embed"></iframe></div>
+    <div class="mapbox"><iframe loading="lazy" title="Live Google map" src="https://www.google.com/maps?q=${encodeURIComponent(v.mapQuery || v.venue + " " + v.address)}&z=15&output=embed"></iframe></div>
     <div class="vb"><p class="ey">${v.name}</p><h3>${v.venue}</h3><p class="ad">${v.address}</p><p class="mt">${v.date} · ${v.time}</p>
       <div class="two"><a class="btn pri wide" href="${mapsUrl(v)}" target="_blank" rel="noopener">View on Google Maps</a><button class="btn sec wide" data-copy="${v.venue}, ${v.address}">Copy address</button></div></div>
   </article>`).join("");
-
-$$("[data-copy]").forEach(b => b.addEventListener("click", async () => { const t = b.dataset.copy; try { await navigator.clipboard.writeText(t); } catch (_) {} b.textContent = "Copied ✓"; buzz(10); setTimeout(() => b.textContent = "Copy address", 1800); }));
+$$("[data-copy]").forEach(b => b.addEventListener("click", async () => { try { await navigator.clipboard.writeText(b.dataset.copy); } catch (_) {} b.textContent = "Copied ✓"; buzz(10); setTimeout(() => b.textContent = "Copy address", 1800); }));
 
 /* ---------- Schedule ---------- */
 (() => {
@@ -778,9 +756,9 @@ $$("[data-copy]").forEach(b => b.addEventListener("click", async () => { const t
   show(3);
 })();
 
-/* ---------- Dress code ---------- */
+/* ---------- Dress Code ---------- */
 $("#dress").innerHTML = CONFIG.dress.map(d => `<article class="dress" data-reveal tabindex="0" role="button" aria-expanded="false"><div class="top"><div><h3>${d.title}</h3><p>${d.text}</p></div><div class="sw">${d.swatches.slice(0, 3).map(s => `<i style="background:${s.c}"></i>`).join("")}</div></div><div class="big"><div><div class="pal">${d.swatches.map(s => `<div><span style="background:${s.c}"></span><small>${s.n}</small></div>`).join("")}</div></div></div></article>`).join("");
-$$(".dress").forEach(d => d.addEventListener("click", () => { d.setAttribute("aria-expanded", d.getAttribute("aria-expanded") !== "true"); }));
+$$(".dress").forEach(d => d.addEventListener("click", () => d.setAttribute("aria-expanded", d.getAttribute("aria-expanded") !== "true")));
 
 /* ---------- Family ---------- */
 $("#lists").innerHTML = F.lists.map(l => `<div class="lst" data-reveal><p class="lh">${l.hi}</p><p class="le">${l.en}</p><ul>${l.names.map(n => `<li>${n}</li>`).join("")}</ul></div>`).join("");
@@ -789,22 +767,57 @@ $("#rNote").textContent = CONFIG.rsvp.deadline ? `Kindly respond by ${CONFIG.rsv
 const cal = CONFIG.calendar;
 $("#calBtn").href = "https://calendar.google.com/calendar/render?action=TEMPLATE&text=" + encodeURIComponent(cal.title) + "&dates=" + cal.start + "/" + cal.end + "&location=" + encodeURIComponent(WEDDING_VENUE.venue + ", " + WEDDING_VENUE.address) + "&details=" + encodeURIComponent("Wedding · " + location.href);  $$("[data-reveal]").forEach(el => io.observe(el));
 
-/* ---------- Scratch card ---------- */
+/* ---------- Background Crossfade ---------- */
+function mountBg(sel, list) {
+  const sec = $(sel); if (!sec) return;
+  const box = document.createElement("div"); box.className = "bgs"; sec.prepend(box);
+  const imgs = list.map(o => {
+    const im = new Image(); im.src = getImg(o); im.style.objectPosition = o.pos || "50% 30%"; box.appendChild(im); return im;
+  });
+  let cur = 0; if (imgs[0]) imgs[0].classList.add("on");
+  setInterval(() => {
+    if (!imgs.length) return;
+    imgs[cur].classList.remove("on");
+    cur = (cur + 1) % imgs.length;
+    imgs[cur].classList.add("on");
+  }, 6000);
+}
+mountBg("#wedding", [CONFIG.cover, CONFIG.photos[0], CONFIG.photos[3], CONFIG.photos[6]]);
+mountBg("#functions", [CONFIG.photos[1], CONFIG.photos[4], CONFIG.photos[7], CONFIG.photos[10]]);
+
+/* ---------- Scratch Card ---------- */
 (() => {
   const card = $("#scratchCard"), cv = $("#sc"), ctx = cv.getContext("2d");
   let done = false, drawing = false;
   function paint() {
-    const r = card.getBoundingClientRect(), d = Math.min(devicePixelRatio || 1, 2);
-    cv.width = r.width * d; cv.height = r.height * d; ctx.setTransform(d, 0, 0, d, 0, 0);
-    ctx.fillStyle = "#BC9A58"; ctx.fillRect(0, 0, r.width, r.height);
+    const r = card.getBoundingClientRect();
+    if (!r.width) return;
+    cv.width = r.width; cv.height = r.height;
+    ctx.globalCompositeOperation = "source-over";
+    const g = ctx.createLinearGradient(0, 0, cv.width, cv.height);
+    g.addColorStop(0, "#BC9A58"); g.addColorStop(.5, CHAMPAGNE); g.addColorStop(1, "#B08E4D");
+    ctx.fillStyle = g; ctx.fillRect(0, 0, cv.width, cv.height);
+    ctx.strokeStyle = "rgba(59,13,24,.4)"; ctx.strokeRect(10, 10, cv.width - 20, cv.height - 20);
     ctx.fillStyle = BURGUNDY; ctx.textAlign = "center"; ctx.textBaseline = "middle";
-    ctx.font = '600 20px "Cormorant Garamond", serif'; ctx.fillText("Scratch to reveal", r.width / 2, r.height / 2);
+    ctx.font = '600 22px "Cormorant Garamond", serif'; ctx.fillText("A little secret awaits…", cv.width / 2, cv.height / 2 - 12);
+    ctx.font = "500 12px Jost, sans-serif"; ctx.fillText("SCRATCH TO REVEAL", cv.width / 2, cv.height / 2 + 20);
   }
-  const scratch = (x, y) => { ctx.globalCompositeOperation = "destination-out"; ctx.beginPath(); ctx.arc(x, y, 35, 0, Math.PI * 2); ctx.fill(); };
-  cv.addEventListener("pointerdown", e => { drawing = true; const r = cv.getBoundingClientRect(); scratch(e.clientX - r.left, e.clientY - r.top); });
-  cv.addEventListener("pointermove", e => { if (!drawing) return; const r = cv.getBoundingClientRect(); scratch(e.clientX - r.left, e.clientY - r.top); });
-  window.addEventListener("pointerup", () => { drawing = false; });
-  $("#revealBtn").onclick = () => { cv.style.display = "none"; }; paint(); })();  /* ---------- Countdown ---------- */ (() => { const target = new Date(CONFIG.countdownTarget).getTime(), els = {}; $$("[data-u]").forEach(el => els[el.dataset.u] = el);
+  const scratch = (x, y) => {
+    ctx.globalCompositeOperation = "destination-out";
+    ctx.beginPath(); ctx.arc(x, y, 32, 0, Math.PI * 2); ctx.fill();
+  };
+  const getPos = e => {
+    const r = cv.getBoundingClientRect();
+    const touch = e.touches ? e.touches[0] : e;
+    return { x: touch.clientX - r.left, y: touch.clientY - r.top };
+  };
+  cv.addEventListener("touchstart", e => { drawing = true; const p = getPos(e); scratch(p.x, p.y); }, { passive: true });
+  cv.addEventListener("touchmove", e => { if (drawing) { const p = getPos(e); scratch(p.x, p.y); } }, { passive: true });
+  window.addEventListener("touchend", () => { drawing = false; });
+  cv.addEventListener("mousedown", e => { drawing = true; const p = getPos(e); scratch(p.x, p.y); });
+  cv.addEventListener("mousemove", e => { if (drawing) { const p = getPos(e); scratch(p.x, p.y); } });
+  window.addEventListener("mouseup", () => { drawing = false; });
+  $("#revealBtn").onclick = () => { cv.classList.add("cleared"); }; window.addEventListener("load", paint); paint(); })();  /* ---------- Countdown ---------- */ (() => { const target = new Date(CONFIG.countdownTarget).getTime(), els = {}; $$("[data-u]").forEach(el => els[el.dataset.u] = el);
   const tick = () => {
     const d = Math.max(0, target - Date.now());
     els.d.textContent = String(Math.floor(d / 864e5)).padStart(2, "0");
@@ -815,7 +828,7 @@ $("#calBtn").href = "https://calendar.google.com/calendar/render?action=TEMPLATE
   setInterval(tick, 1000); tick();
 })();
 
-/* ---------- Petals Animation ---------- */
+/* ---------- Particles ---------- */
 const Petals = (() => {
   const cv = $("#petals"), ctx = cv.getContext("2d"); let W, H, list = [];
   const make = () => ({ x: Math.random() * W, y: -20, s: 2 + Math.random() * 3, vy: 0.8 + Math.random() * 0.8, vx: (Math.random() - 0.5) * 0.4 });
@@ -835,17 +848,55 @@ const Petals = (() => {
   return { shower: () => {} };
 })();
 
-/* ---------- Open Action ---------- */
-const intro = $("#intro");
-$("#openBtn").addEventListener("click", () => {
-  intro.classList.add("opening");
-  document.body.classList.remove("locked");
-  document.body.classList.add("ready");
-  setTimeout(() => { intro.classList.add("gone"); }, 600);
+/* ---------- Music (YouTube + Fallback) ---------- */
+const Music = (() => {
+  let yt = null, ytReady = false, playing = false;
+  const host = document.createElement("div"); host.id = "ytHost"; host.innerHTML = '<div id="ytp"></div>'; document.body.appendChild(host);
+  window.onYouTubeIframeAPIReady = () => {
+    try {
+      yt = new YT.Player("ytp", {
+        width: 200, height: 200, videoId: CONFIG.music.youtube,
+        playerVars: { autoplay: 0, controls: 0, loop: 1, playlist: CONFIG.music.youtube, playsinline: 1 },
+        events: { onReady: () => { ytReady = true; if (playing) play(); } }
+      });
+    } catch (_) {}
+  };
+  const s = document.createElement("script"); s.src = "https://www.youtube.com/iframe_api"; document.head.appendChild(s);
+  function ui() {
+    const b = $("#musicBtn"); b.classList.toggle("playing", playing); b.setAttribute("aria-pressed", playing);
+  }
+  function play() {
+    playing = true; ui();
+    if (yt && ytReady) { try { yt.unMute(); yt.setVolume(70); yt.playVideo(); } catch (_) {} }
+  }
+  function pause() {
+    playing = false; ui();
+    if (yt && ytReady) { try { yt.pauseVideo(); } catch (_) {} }
+  }
+  return { play, pause, toggle: () => playing ? pause() : play() };
+})();
+
+let wantMusic = true;
+$("#introMusic").addEventListener("click", () => {
+  wantMusic = !wantMusic;
+  $("#introMusic").textContent = wantMusic ? "♪ Music on" : "♪ Music off";
 });
 
-/* ---------- Menu & Share ---------- */
+/* ---------- Open Action ---------- */
+$("#openBtn").addEventListener("click", () => {
+  buzz(20);
+  if (wantMusic) { try { Music.play(); } catch (_) {} }
+  document.body.classList.add("ready");
+  document.body.classList.remove("locked");
+  $("#intro").classList.add("opening");
+  setTimeout(() => { $("#intro").classList.add("gone"); }, 600);
+});
+
+/* ---------- Menu & RSVP ---------- */
 $("#menuBtn").onclick = () => $("#menu").classList.toggle("open"); $$("#menu a").forEach(a => a.onclick = () => { $("#menu").classList.remove("open"); document.querySelector(a.getAttribute("href")).scrollIntoView({ behavior: "smooth" }); });
+const wa = m => `https://wa.me/${(CONFIG.rsvp.whatsapp || "").replace(/\D/g, "")}?text=${encodeURIComponent(m)}`;
+$("#rYes").href = wa(`Hello! We'll be there to celebrate Mayank & Jigyasa's wedding! 🎉`);
+$("#rReg").href = wa(`Hello! Sending our warm regards and blessings to Mayank & Jigyasa! ❤️`);
 $("#shareBtn").onclick = () => { if (navigator.share) navigator.share({ title: document.title, url: location.href }); };
 })();
 </script>
