@@ -86,7 +86,7 @@ section:first-child{border-top:0}
 .names{font-family:var(--serif);font-weight:500;line-height:.98}
 .names span{display:block}
 .names i{display:block;font-family:var(--script);font-style:normal;font-weight:400;color:var(--champagne);font-size:.46em;line-height:1.15}
-.photo{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:1}
+.photo{position:absolute;inset:0;width:100%;height:100%;object-fit:;opacity:1}
 .photo.bad{display:none}
 .crn{position:absolute;width:42px;height:42px;color:var(--champagne);pointer-events:none;opacity:.9}
 .crn.tl{top:20px;left:20px}.crn.tr{top:20px;right:20px;transform:scaleX(-1)}.crn.bl{bottom:20px;left:20px;transform:scaleY(-1)}.crn.br{bottom:20px;right:20px;transform:scale(-1)}
@@ -193,7 +193,7 @@ section:first-child{border-top:0}
 .fr.f2{padding:14px}
 .fr.f3{background:var(--burgundy);padding:8px}
 .fr .in{position:relative;overflow:hidden;width:100%;background:var(--cream)}
-.fr .in img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;transform:scale(var(--z,1));will-change:transform}
+.fr .in img{position:absolute;inset:0;width:100%;height:100%;object-fit:;transform:scale(var(--z,1));will-change:transform}
 .fr::after{content:"";position:absolute;inset:3px;border:1px solid var(--line-soft);pointer-events:none}
 @media (hover:hover){.g:hover .fr{transform:translateY(-3px)}}
 .cap{display:block;margin-top:8px;font:400 10.5px/1.4 var(--sans);letter-spacing:.16em;text-transform:var(--tt);color:var(--burgundy)}
@@ -216,7 +216,7 @@ section:first-child{border-top:0}
 .vid{margin-bottom:24px}
 .vf{position:relative;padding:6px;border:1px solid var(--champagne);background:var(--burgundy-deep)}
 .vbox{position:relative;aspect-ratio:16/9;background:var(--burgundy-deep);overflow:hidden}
-.vbox img,.vbox iframe{position:absolute;inset:0;width:100%;height:100%;border:0;object-fit:cover}
+.vbox img,.vbox iframe{position:absolute;inset:0;width:100%;height:100%;border:0;object-fit:}
 .vthumb{position:absolute;inset:0;width:100%;height:100%}
 .play{position:absolute;left:50%;top:50%;width:64px;height:64px;margin:-32px 0 0 -32px;border:1px solid var(--champagne);border-radius:50%;background:rgba(36,7,15,.4);z-index:2;display:grid;place-items:center;transition:transform .5s var(--ease),background .5s}
 .play::before{content:"";margin-left:4px;border-left:15px solid var(--champagne-light);border-top:10px solid transparent;border-bottom:10px solid transparent}
@@ -347,7 +347,7 @@ section:first-child{border-top:0}
 /* ---- Section Backgrounds ---- */
 #wedding,#functions{overflow:hidden}
 .bgs{position:absolute;inset:0;z-index:0;overflow:hidden;pointer-events:none}
-.bgs img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:0;transform:scale(1.06);transition:opacity 2s ease,transform 8s linear}
+.bgs img{position:absolute;inset:0;width:100%;height:100%;object-fit:;opacity:0;transform:scale(1.06);transition:opacity 2s ease,transform 8s linear}
 .bgs img.on{opacity:var(--bgop,.32);transform:scale(1.12)}
 .bgs::after{content:"";position:absolute;inset:0;background:var(--bgo)}
 .bgs~*{position:relative;z-index:1}
@@ -411,7 +411,7 @@ section:first-child{border-top:0}
 
 <main class="app">
   <section id="home" aria-label="Welcome">
-    <div class="hpic"><img class="photo" id="heroImg" data-cover alt="Mayank and Jigyasa" decoding="async" fetchpriority="high"></div>
+    <div class="hpic"><img class="photo" id="heroImg" data- alt="Mayank and Jigyasa" decoding="async" fetchpriority="high"></div>
     <div class="hframe" aria-hidden="true"></div>
     <div class="hero-c" id="heroC">
       <p class="ey">Together with their families</p>
@@ -565,27 +565,27 @@ const CONFIG = {
   countdownTarget: "2026-11-20T20:00:00+05:30",
   calendar: { title: "Mayank & Jigyasa's Wedding", start: "20261120T143000Z", end: "20261120T183000Z" },
   music: { youtube: "iTxW3NNHuyw", src: "music/wedding.mp3", autoStartOnOpen: true },
-  cover: { src: "cover.jpg", ... },
-  closing: { src: "closing.jpg", ... },
-  photos: [
-    { src: "photo-01.jpg", ... },
-    { src: "photo-02.jpg", ... },
-    { src: "photo-03.jpg", ... },
-    { src: "photo-04.jpg", ... },
-    { src: "photo-05.jpg", ... },
-    { src: "photo-06.jpg", ... },
-    { src: "photo-07.jpg", ... },
-    { src: "photo-08.jpg", ... },
-    { src: "photo-09.jpg", ... },
-    { src: "photo-10.jpg", ... },
-    { src: "photo-11.jpg", ... },
-    { src: "photo-12.jpg", ... },
-    { src: "photo-13.jpg", ... },
-    { src: "photo-14.jpg", ... },
-    { src: "photo-15.jpg", ... },
-    { src: "photo-16.jpg", ... },
-    { src: "photo-17.jpg", ... }
-  ],
+  cover: { src: "cover.jpg" },
+closing: { src: "closing.jpg" },
+photos: [
+  { src: "photo-01.jpg" },
+  { src: "photo-02.jpg" },
+  { src: "photo-03.jpg" },
+  { src: "photo-04.jpg" },
+  { src: "photo-05.jpg" },
+  { src: "photo-06.jpg" },
+  { src: "photo-07.jpg" },
+  { src: "photo-08.jpg" },
+  { src: "photo-09.jpg" },
+  { src: "photo-10.jpg" },
+  { src: "photo-11.jpg" },
+  { src: "photo-12.jpg" },
+  { src: "photo-13.jpg" },
+  { src: "photo-14.jpg" },
+  { src: "photo-15.jpg" },
+  { src: "photo-16.jpg" },
+  { src: "photo-17.jpg" }
+],
   videos: [
     { id: "Dc-iFIgrb1c", title: "Ring ceremony · Highlights", note: "The moments from our special day" },
     { id: "V4olvvigox4", title: "Ring ceremony · Film two", note: "A few more memories to relive" }
