@@ -1,7 +1,4 @@
-<html>
-        <head><title>Downloaded HTML</title></head>
-        <body>
-            <pre style="white-space: pre-wrap; word-wrap: break-word;"><!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="UTF-8">
@@ -17,8 +14,11 @@
 <meta name="twitter:card" content="summary_large_image">
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Ccircle cx='32' cy='32' r='30' fill='%233B0D18' stroke='%23D4AF6A' stroke-width='2'/%3E%3Ctext x='32' y='41' font-family='Georgia,serif' font-size='24' font-style='italic' fill='%23E8D3A5' text-anchor='middle'%3EM%26amp;J%3C/text%3E%3C/svg%3E">
 <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600&family=Jost:wght@300;400;500&family=Pinyon+Script&family=Tiro+Devanagari+Hindi&display=swap" rel="stylesheet">
+<!-- Preload priority hero cover to prevent blank opening screen -->
+<link rel="preload" as="image" href="cover.jpg" fetchpriority="high">
+
 <style>
 :root{
   --burgundy:#3B0D18;--burgundy-2:#521322;--burgundy-3:#6B1D30;
@@ -89,7 +89,8 @@ section:first-child{border-top:0}
 .names{font-family:var(--serif);font-weight:500;line-height:.98}
 .names span{display:block}
 .names i{display:block;font-family:var(--script);font-style:normal;font-weight:400;color:var(--champagne);font-size:.46em;line-height:1.15}
-.photo{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:1}
+.photo{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:0;transition:opacity .8s ease}
+.photo.loaded{opacity:1}
 .photo.bad{display:none}
 .crn{position:absolute;width:42px;height:42px;color:var(--champagne);pointer-events:none;opacity:.9}
 .crn.tl{top:20px;left:20px}.crn.tr{top:20px;right:20px;transform:scaleX(-1)}.crn.bl{bottom:20px;left:20px;transform:scaleY(-1)}.crn.br{bottom:20px;right:20px;transform:scale(-1)}
@@ -108,7 +109,7 @@ section:first-child{border-top:0}
 .gate-door{
   position:absolute;top:0;bottom:0;width:50%;height:100%;
   background:
-    radial-gradient(circle at center, rgba(82,19,34,0.7), rgba(36,7,15,0.95)),
+    radial-gradient(circle at center, rgba(82,19,34,0.75), rgba(36,7,15,0.96)),
     repeating-linear-gradient(45deg, rgba(212,175,106,0.03) 0, rgba(212,175,106,0.03) 1px, transparent 0, transparent 20px),
     repeating-linear-gradient(-45deg, rgba(212,175,106,0.03) 0, rgba(212,175,106,0.03) 1px, transparent 0, transparent 20px),
     var(--burgundy-deep);
@@ -130,7 +131,6 @@ section:first-child{border-top:0}
 .gate-left{left:0;transform-origin:left center;border-right:1px solid var(--champagne)}
 .gate-right{right:0;transform-origin:right center;border-left:1px solid var(--champagne)}
 
-/* Gate handles */
 .gate-handle{
   position:absolute;top:50%;width:18px;height:52px;
   border:2px solid var(--champagne);border-radius:9px;
@@ -140,7 +140,6 @@ section:first-child{border-top:0}
 .gate-left .gate-handle{right:12px;border-top-right-radius:2px;border-bottom-right-radius:2px}
 .gate-right .gate-handle{left:12px;border-top-left-radius:2px;border-bottom-left-radius:2px}
 
-/* Golden Silk Ribbon & Wax Seal */
 .ribbon-wrap{
   position:absolute;top:50%;left:0;right:0;height:44px;
   transform:translateY(-50%);z-index:6;
@@ -170,7 +169,6 @@ section:first-child{border-top:0}
   border:1px dashed var(--champagne);border-radius:50%;opacity:.7;
 }
 
-/* Open Animation triggers */
 #intro.opening .gate-left{transform:rotateY(-112deg);box-shadow:-30px 0 60px rgba(0,0,0,.95)}
 #intro.opening .gate-right{transform:rotateY(112deg);box-shadow:30px 0 60px rgba(0,0,0,.95)}
 #intro.opening .ribbon-left{transform:scaleX(0);opacity:0}
@@ -178,7 +176,6 @@ section:first-child{border-top:0}
 #intro.opening .seal{transform:scale(1.4) rotate(20deg);opacity:0}
 #intro.opening .ibox{opacity:0;transform:scale(.9) translateZ(-100px)}
 
-/* Intro Center Card & High-Contrast Typography */
 .ibox{
   position:relative;z-index:5;
   padding:calc(28px + var(--st)) 24px calc(28px + var(--sb));
@@ -192,7 +189,7 @@ section:first-child{border-top:0}
 .mono::after{content:"";position:absolute;inset:4px;border:1px solid var(--line-soft);border-radius:50%}
 .mono span{font-size:13px;margin:0 3px;color:var(--champagne);font-style:normal}
 
-/* FIXED NAME VISIBILITY: bright golden font with subtle shadow */
+/* Explicit high-contrast name styling */
 .ibox .names{
   font-size:clamp(32px,10vw,46px);
   text-transform:uppercase;
@@ -293,8 +290,21 @@ section:first-child{border-top:0}
 .fr{position:relative;background:var(--ivory);padding:8px;border:1px solid var(--champagne);transition:transform .6s var(--ease)}
 .fr.f2{padding:14px}
 .fr.f3{background:var(--burgundy);padding:8px}
-.fr .in{position:relative;overflow:hidden;width:100%;background:var(--cream)}
-.fr .in img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;transform:scale(var(--z,1));will-change:transform}
+
+/* Shimmer placeholder for gallery cards while loading */
+.fr .in{
+  position:relative;overflow:hidden;width:100%;
+  background:linear-gradient(90deg, #f0e6d2 25%, #fdfbf7 50%, #f0e6d2 75%);
+  background-size:200% 100%;
+  animation:shimmer 1.8s infinite;
+}
+@keyframes shimmer{0%{background-position:200% 0}100%{background-position:-200% 0}}
+.fr .in img{
+  position:absolute;inset:0;width:100%;height:100%;object-fit:cover;
+  transform:scale(var(--z,1));will-change:transform;
+  opacity:0;transition:opacity .5s ease;
+}
+.fr .in img.loaded{opacity:1}
 .fr::after{content:"";position:absolute;inset:3px;border:1px solid var(--line-soft);pointer-events:none}
 @media (hover:hover){.g:hover .fr{transform:translateY(-3px)}}
 .cap{display:block;margin-top:8px;font:400 10.5px/1.4 var(--sans);letter-spacing:.16em;text-transform:var(--tt);color:var(--burgundy)}
@@ -472,24 +482,15 @@ section:first-child{border-top:0}
 <div id="progress" aria-hidden="true"><i id="progressBar"></i></div>
 
 <div id="intro" role="dialog" aria-label="Wedding invitation">
-  <!-- Royal Gate Left Door -->
-  <div class="gate-door gate-left" aria-hidden="true">
-    <div class="gate-handle"></div>
-  </div>
+  <div class="gate-door gate-left" aria-hidden="true"><div class="gate-handle"></div></div>
+  <div class="gate-door gate-right" aria-hidden="true"><div class="gate-handle"></div></div>
 
-  <!-- Royal Gate Right Door -->
-  <div class="gate-door gate-right" aria-hidden="true">
-    <div class="gate-handle"></div>
-  </div>
-
-  <!-- Silk Ribbon & Wax Seal -->
   <div class="ribbon-wrap" id="ribbonWrap" aria-hidden="true">
     <div class="ribbon-strap ribbon-left"></div>
     <div class="seal">M♡J</div>
     <div class="ribbon-strap ribbon-right"></div>
   </div>
 
-  <!-- Intro invitation content -->
   <div class="ibox">
     <p class="gn hindi">॥ श्री गणेशाय नमः ॥</p>
     <p class="ey">Together with their families</p>
@@ -676,7 +677,6 @@ const WEDDING_VENUE = { venue: "Fillow Casa", address: "J-7 Badshahpur, Sohna Ro
 const RECEPTION_VENUE = { venue: "Sadiq Nagar Community Center Barat Ghar", address: "Sector 3, Ayurvigyan Nagar, New Delhi, Delhi 110049", mapUrl: "https://share.google/NZqBWcqgS7zBtFz1C", mapQuery: "Sadiq Nagar Community Center Barat Ghar Sector 3 Ayurvigyan Nagar New Delhi 110049" };
 const RECEPTION_TIME = "7:00 PM onwards";
 
-/* Embedded local file names with automatic Google Drive fallback */
 const CONFIG = {
   groom: "Mayank", bride: "Jigyasa", hashtag: "#MayankWedsJigyasa",
   countdownTarget: "2026-11-20T20:00:00+05:30",
@@ -701,7 +701,8 @@ const CONFIG = {
     { src: "photo-14.jpg" },
     { src: "photo-15.jpg" },
     { src: "photo-16.jpg" },
-    { src: "photo-17.jpg" }
+    { src: "photo-17.jpg" },
+    { src: "photo-18.jpg" }
   ],
   videos: [
     { id: "Dc-iFIgrb1c", title: "Ring ceremony · Highlights", note: "The moments from our special day" },
@@ -779,6 +780,7 @@ $("#hashtag").textContent = CONFIG.hashtag; requestAnimationFrame(() => $$("#int
 
 function setPhoto(el, o) {
   el.style.objectPosition = o.pos || "50% 35%";
+  el.onload = () => el.classList.add("loaded");
   el.src = getImg(o);
   el.onerror = () => { if (o.drive && el.src !== getImg({ drive: o.drive })) el.src = `https://lh3.googleusercontent.com/d/${dId(o)}=w1400`; };
 }
@@ -813,7 +815,15 @@ $("#playShow").addEventListener("click", () => LB.open(0));
 /* ---------- Gallery ---------- */
 const galEl = $("#gallery");
 function buildGallery() {
-  const card = (p, i) => `<button class="g" data-i="${i}" data-reveal="zoom" aria-label="Open photo ${i + 1}"><div class="fr f${(i % 3) + 1}"><div class="in" style="aspect-ratio:3/4"><img src="${getImg(p)}" alt="Mayank and Jigyasa" loading="lazy" decoding="async"></div></div><span class="cap">${p.caption || "Together"} — M &amp; J · 2026</span></button>`;
+  const card = (p, i) => `
+    <button class="g" data-i="${i}" data-reveal="zoom" aria-label="Open photo ${i + 1}">
+      <div class="fr f${(i % 3) + 1}">
+        <div class="in" style="aspect-ratio:3/4">
+          <img src="${getImg(p)}" alt="Mayank and Jigyasa" loading="lazy" decoding="async" onload="this.classList.add('loaded')">
+        </div>
+      </div>
+      <span class="cap">${p.caption || "Together"} — M &amp; J · 2026</span>
+    </button>`;
   galEl.innerHTML = `<div class="mas"><div class="mc">${CONFIG.photos.slice(0, 9).map((p, i) => card(p, i)).join("")}</div><div class="mc">${CONFIG.photos.slice(9).map((p, i) => card(p, i + 9)).join("")}</div></div>`;
   $$("[data-reveal]", galEl).forEach(el => io.observe(el)); $$
 (".g", galEl).forEach(b => b.addEventListener("click", () => LB.open(+b.dataset.i)));
@@ -884,12 +894,17 @@ $("#rNote").textContent = CONFIG.rsvp.deadline ? `Kindly respond by ${CONFIG.rsv
 const cal = CONFIG.calendar;
 $("#calBtn").href = "https://calendar.google.com/calendar/render?action=TEMPLATE&text=" + encodeURIComponent(cal.title) + "&dates=" + cal.start + "/" + cal.end + "&location=" + encodeURIComponent(WEDDING_VENUE.venue + ", " + WEDDING_VENUE.address) + "&details=" + encodeURIComponent("Wedding · " + location.href); $$("[data-reveal]").forEach(el => io.observe(el));
 
-/* ---------- Background Crossfade ---------- */
+/* ---------- Background Crossfade (Deferred for bandwidth) ---------- */
 function mountBg(sel, list) {
   const sec = $(sel); if (!sec) return;
   const box = document.createElement("div"); box.className = "bgs"; sec.prepend(box);
   const imgs = list.map(o => {
-    const im = new Image(); im.src = getImg(o); im.style.objectPosition = o.pos || "50% 30%"; box.appendChild(im); return im;
+    const im = new Image(); 
+    im.loading = "lazy";
+    im.src = getImg(o); 
+    im.style.objectPosition = o.pos || "50% 30%"; 
+    box.appendChild(im); 
+    return im;
   });
   let cur = 0; if (imgs[0]) imgs[0].classList.add("on");
   setInterval(() => {
@@ -899,8 +914,6 @@ function mountBg(sel, list) {
     imgs[cur].classList.add("on");
   }, 6000);
 }
-mountBg("#wedding", [CONFIG.cover, CONFIG.photos[0], CONFIG.photos[3], CONFIG.photos[6]]);
-mountBg("#functions", [CONFIG.photos[1], CONFIG.photos[4], CONFIG.photos[7], CONFIG.photos[10]]);
 
 /* =========================================================
    SCRATCH CARD WITH AUTO-REVEAL AT 40%
@@ -923,7 +936,6 @@ mountBg("#functions", [CONFIG.photos[1], CONFIG.photos[4], CONFIG.photos[7], CON
     ctx.font = "500 12px Jost, sans-serif"; ctx.fillText("SCRATCH TO REVEAL", cv.width / 2, cv.height / 2 + 20);
   }
 
-  /* Broader scratch radius for effortless scratching */
   const scratch = (x, y) => {
     if (done) return;
     ctx.globalCompositeOperation = "destination-out";
@@ -938,13 +950,12 @@ mountBg("#functions", [CONFIG.photos[1], CONFIG.photos[4], CONFIG.photos[7], CON
     }
   };
 
-  /* Auto-completes when roughly 40% is scratched */
   function checkScratched() {
     if (done) return;
     const imgData = ctx.getImageData(0, 0, cv.width, cv.height);
     const pix = imgData.data;
     let transparent = 0;
-    const step = 32; /* sample every 32nd pixel for performance */
+    const step = 32;
     for (let i = 3; i < pix.length; i += step * 4) {
       if (pix[i] === 0) transparent++;
     }
@@ -1040,6 +1051,13 @@ $("#openBtn").addEventListener("click", () => {
   document.body.classList.add("ready");
   document.body.classList.remove("locked");
   $("#intro").classList.add("opening");
+
+  // Defer heavy background animations until after gates open
+  setTimeout(() => {
+    mountBg("#wedding", [CONFIG.cover, CONFIG.photos[0], CONFIG.photos[3], CONFIG.photos[6]]);
+    mountBg("#functions", [CONFIG.photos[1], CONFIG.photos[4], CONFIG.photos[7], CONFIG.photos[10]]);
+  }, 1000);
+
   setTimeout(() => { $("#intro").classList.add("gone"); }, 1600);
 });
 
@@ -1055,6 +1073,4 @@ $("#shareBtn").onclick = () => { if (navigator.share) navigator.share({ title: d
 })();
 </script>
 </body>
-</html></pre>
-        </body>
-    </html>
+</html>
