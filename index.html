@@ -16,8 +16,9 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600&family=Jost:wght@300;400;500&family=Pinyon+Script&family=Tiro+Devanagari+Hindi&display=swap" rel="stylesheet">
-<!-- Preload priority hero cover to prevent blank opening screen -->
+<!-- Preload priority hero cover and local wedding music -->
 <link rel="preload" as="image" href="cover.jpg" fetchpriority="high">
+<link rel="preload" as="audio" href="wedding.mp3">
 
 <style>
 :root{
@@ -472,7 +473,6 @@ section:first-child{border-top:0}
 #wedding .bgs{--bgop:.32;--bgo:linear-gradient(180deg,rgba(59,13,24,.6),rgba(59,13,24,.2) 45%,rgba(59,13,24,.65))}
 #functions .bgs{--bgop:.4;--bgo:linear-gradient(180deg,rgba(255,248,234,.72),rgba(255,248,234,.3) 45%,rgba(255,248,234,.78))}
 
-#ytHost{position:fixed;left:0;bottom:0;width:200px;height:200px;opacity:0;pointer-events:none;z-index:-1;overflow:hidden}
 @media (min-width:760px){.app{max-width:600px;box-shadow:0 0 0 1px var(--line),0 0 90px rgba(0,0,0,.5)}body{font-size:19px}section{padding:72px 28px 76px}.rail{padding-left:12%;padding-right:12%;margin:0 -28px}}
 </style>
 </head>
@@ -692,7 +692,7 @@ const CONFIG = {
   groom: "Mayank", bride: "Jigyasa", hashtag: "#MayankWedsJigyasa",
   countdownTarget: "2026-11-20T20:00:00+05:30",
   calendar: { title: "Mayank & Jigyasa's Wedding", start: "20261120T143000Z", end: "20261120T183000Z" },
-  music: { youtube: "iTxW3NNHuyw", src: "music/wedding.mp3", autoStartOnOpen: true },
+  music: { src: "wedding.mp3", autoStartOnOpen: true },
   cover: { src: "cover.jpg" },
   closing: { src: "closing.jpg" },
   photos: [
@@ -722,7 +722,7 @@ const CONFIG = {
   family: {
     grandparents: "Late Smt. Kamla Devi & Late Shri Mohanlal",
     groomParents: "Smt. Seema & Shri Manoj Kumar",
-    brideParents: "Smt. Shakuntla & Shri Pratap Singh Naweria",
+    brideParents: "Smt. Shakuntla & Shri Pratap Singh Naveria",
     lists: [
       { hi: "विनीत", en: "Awaiting your presence", names: ["Manoj Kumar", "Vijay Kumar", "Surendra Kumar (Jija Ji)", "Abhishek (Damad Ji)", "& All family"] },
       { hi: "दर्शनाभिलाषी", en: "With best compliments from", names: ["Rohit", "Prithvi", "Sachin", "Rishabh", "Jacku Baby"] }
@@ -1021,32 +1021,51 @@ const Petals = (() => {
   return { shower: () => {} };
 })();
 
-/* ---------- Music (YouTube + Fallback) ---------- */
+/* ---------- Native Audio Player (Hosted on GitHub) ---------- */
 const Music = (() => {
-  let yt = null, ytReady = false, playing = false;
-  const host = document.createElement("div"); host.id = "ytHost"; host.innerHTML = '<div id="ytp"></div>'; document.body.appendChild(host);
-  window.onYouTubeIframeAPIReady = () => {
-    try {
-      yt = new YT.Player("ytp", {
-        width: 200, height: 200, videoId: CONFIG.music.youtube,
-        playerVars: { autoplay: 0, controls: 0, loop: 1, playlist: CONFIG.music.youtube, playsinline: 1 },
-        events: { onReady: () => { ytReady = true; if (playing) play(); } }
-      });
-    } catch (_) {}
-  };
-  const s = document.createElement("script"); s.src = "https://www.youtube.com/iframe_api"; document.head.appendChild(s);
+  const audio = new Audio();
+  audio.src = CONFIG.music.src;
+  audio.loop = true;
+  audio.preload = "auto";
+
+  let isPlaying = false;
+
   function ui() {
-    const b = $("#musicBtn"); b.classList.toggle("playing", playing); b.setAttribute("aria-pressed", playing);
+    const b = $("#musicBtn");
+    if (b) {
+      b.classList.toggle("playing", isPlaying);
+      b.setAttribute("aria-pressed", isPlaying);
+    }
   }
+
   function play() {
-    playing = true; ui();
-    if (yt && ytReady) { try { yt.unMute(); yt.setVolume(70); yt.playVideo(); } catch (_) {} }
+    audio.play().then(() => {
+      isPlaying = true;
+      ui();
+    }).catch(err => {
+      console.warn("Audio autoplay blocked by browser policy:", err);
+    });
   }
+
   function pause() {
-    playing = false; ui();
-    if (yt && ytReady) { try { yt.pauseVideo(); } catch (_) {} }
+    audio.pause();
+    isPlaying = false;
+    ui();
   }
-  return { play, pause, toggle: () => playing ? pause() : play() };
+
+  function toggle() {
+    if (isPlaying) {
+      pause();
+    } else {
+      play();
+    }
+  }
+
+  window.addEventListener("pointerdown", () => {
+    if (audio.readyState === 0) audio.load();
+  }, { once: true });
+
+  return { play, pause, toggle };
 })();
 
 let wantMusic = true;
@@ -1073,6 +1092,7 @@ $("#openBtn").addEventListener("click", () => {
 });
 
 /* ---------- Menu & RSVP ---------- */
+$("#musicBtn").onclick = () => Music.toggle();
 $("#menuBtn").onclick = () => $("#menu").classList.toggle("open"); $$("#menu a").forEach(a => a.onclick = () => {
   $("#menu").classList.remove("open");
   document.querySelector(a.getAttribute("href")).scrollIntoView({ behavior: "smooth" });
